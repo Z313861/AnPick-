@@ -22,14 +22,10 @@ st.set_page_config(page_title="AnPick MIS", layout="wide")
 if "page" not in st.session_state:
     st.session_state["page"] = "login"
 
-# sidebar
-st.sidebar.title("AnPick 管理系统")
+user=current_user()
 
-user = current_user()
-
-# ---------------------------------------
 # 未登录
-# ---------------------------------------
+
 if not user:
     if st.session_state["page"] == "login":
         login_page.show(con)
@@ -37,7 +33,11 @@ if not user:
         register_page.show(con)
     st.stop()
 
-# ---------------------------------------
+st.sidebar.title("AnPick MIS")
+
+st.title("🔒 权限检查通过！")
+st.success("您已成功登录，可以访问所有功能")
+
 # 已登录显示侧边栏导航
 # ---------------------------------------
 st.sidebar.markdown(f"**已登录：** {user['username']} \n**角色：** {user['role']}")
@@ -61,4 +61,5 @@ elif menu == "系统配置":
 
 elif menu == "登出":
     logout_user()
+    st.session_state["page"] = "login"
     st.rerun()

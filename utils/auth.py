@@ -33,7 +33,12 @@ def login_user(conn: sqlite3.Connection, username: str, password: str):
     return False
 
 def current_user():
-    return st.session_state.get("user", None)
+    """获取当前用户"""
+    if 'user' in st.session_state:
+        return st.session_state["user"]
+    if 'username' in st.session_state:
+        return {'username': st.session_state["username"]}
+    return None
 
 def logout_user():
     if "user" in st.session_state:
