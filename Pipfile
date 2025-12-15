@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+streamlit = "==1.28.0"
+scikit-learn = "==1.2.2"
+matplotlib = "==3.7.0"
+pandas = "==2.0.0"
+numpy = "==1.24.0"
+plotly = "==5.17.0"
+
+[requires]
+python_version = "3.9"

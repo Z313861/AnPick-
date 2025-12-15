@@ -1,0 +1,45 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.env
+
+# 数据文件
+*.db
+*.sqlite3
+*.sqlite
+data.db
+
+# 图片和生成的文件
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+orders.png
+risk.png
+
+# 文本报告文件
+*.txt
+weekly_report.txt
+
+# IDE 配置文件
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+
+# 日志文件
+*.log
+
+# 操作系统文件
+Thumbs.db
+Desktop.ini
+
+# 测试文件
+test*.py
