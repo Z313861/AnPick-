@@ -8,7 +8,8 @@ import sqlite3
 def show(conn):
     st.title("订单管理")
     with st.expander("新增模拟订单（用于演示）"):
-        order_id = st.text_input("Order ID", value=f"order_{int(datetime.utcnow().timestamp())}")
+        from datetime import datetime,timezone
+        order_id = st.text_input("Order ID", value=f"order_{int(datetime.now(timezone.utc).timestamp())}")
         user_id = st.text_input("用户ID", value="user1")
         courier_id = st.text_input("配送员ID", value="courier1")
         cabinet_id = st.text_input("柜子编号", value="3.2")
