@@ -2,41 +2,6 @@
 
 import streamlit as st
 
-def login_page():
-    st.title("用户登录")
-
-    username = st.text_input("用户名")
-    password = st.text_input("密码", type="password")
-
-    if st.button("登录"):
-        users = st.secrets["users"]
-
-        if username in users and password == users[username]["password"]:
-            st.session_state["logged_in"] = True
-            st.session_state["username"] = username
-            st.session_state["role"] = users[username]["role"]
-            st.rerun()
-        else:
-            st.error("用户名或密码错误")
-
-# 初始化状态
-if "logged_in" not in st.session_state:
-    st.session_state["logged_in"] = False
-
-# 未登录 → 只显示登录页
-if not st.session_state["logged_in"]:
-    login_page()
-    st.stop()
-
-# ===== 登录成功后 =====
-st.sidebar.success(f"欢迎你：{st.session_state['username']}")
-
-if st.sidebar.button("退出登录"):
-    st.session_state.clear()
-    st.rerun()
-
-
-
 
 # 必须最先初始化数据库（在导入页面之前）
 from utils.db import init_db, query
@@ -99,4 +64,5 @@ elif menu == "登出":
     logout_user()
     st.session_state["page"] = "login"
     st.rerun()
+
 
