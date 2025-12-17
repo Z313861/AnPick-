@@ -22,7 +22,5 @@ def show(conn):
     fig2 = plot_cabinet_heatmap(df)
     if fig2:
         st.plotly_chart(fig2, use_container_width=True)
-conn=sqlite3.connect("data.db")
 
-show(conn)
 
