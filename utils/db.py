@@ -44,18 +44,14 @@ def init_db():
     in_cabinet_time TIMESTAMP,
      out_cabinet_time TIMESTAMP,
     status TEXT,
-    risk_score REAL DEFAULT 0,
+    risk REAL DEFAULT 0,
     notes TEXT,
-    
-    
     distance_expected REAL,
     distance_actual REAL,
     pickup_time TIMESTAMP,
     finish_time TIMESTAMP,
     gps_jumps INTEGER,
     photo_ok INTEGER DEFAULT 1
-
-
     );
     """)
 
@@ -104,3 +100,4 @@ def query(conn, sql, params=(), fetch=False):
     conn.commit()
     if fetch:
         return cur.fetchall()
+
