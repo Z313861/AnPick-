@@ -21,5 +21,3 @@ def show(conn):
             st.error("⚠ 检测到异常行为！")
         else:
             st.success("✓ 行为正常")
-conn = sqlite3.connect("data.db")
-show(conn)
