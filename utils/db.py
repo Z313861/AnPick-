@@ -78,7 +78,7 @@ def init_db():
     CREATE TABLE IF NOT EXISTS ai_risk_logs (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         order_id INTEGER,
-        risk_score REAL,
+        risk REAL,
         route_deviation REAL,
         delay_risk REAL,
         cabinet_risk REAL,
@@ -100,4 +100,5 @@ def query(conn, sql, params=(), fetch=False):
     conn.commit()
     if fetch:
         return cur.fetchall()
+
 
