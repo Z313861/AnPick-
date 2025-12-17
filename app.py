@@ -9,12 +9,12 @@ con = init_db()
 
 # 再导入剩余模块（否则它们会提前执行 SQL）
 from utils.auth import current_user, logout_user
-import pages.login_page as login_page
-import pages.register_page as register_page
-import pages.dashboard as dashboard
-import pages.orders as orders_page
-import pages.risk_page as risk_page
-import pages.config_page as config_page
+import views.login_page as login_page
+import views.register_page as register_page
+import views.dashboard as dashboard
+import views.orders as orders_page
+import views.risk_page as risk_page
+import views.config_page as config_page
 
 # 页面设置
 st.set_page_config(page_title="AnPick MIS", layout="wide")
@@ -64,5 +64,6 @@ elif menu == "登出":
     logout_user()
     st.session_state["page"] = "login"
     st.rerun()
+
 
 
