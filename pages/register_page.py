@@ -17,5 +17,3 @@ def show(conn):
     if st.button("返回登录"):
         st.session_state["page"] = "login"
         st.rerun()
-conn = sqlite3.connect("data.db")
-show(conn)
