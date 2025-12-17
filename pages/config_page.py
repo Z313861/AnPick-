@@ -19,5 +19,3 @@ def show(conn):
         st.success("已新增示例摄像头")
     cams = query(conn, "SELECT * FROM cameras", fetch=True)
     st.table(cams)
-conn=sqlite3.connect("data.db")
-show(conn)
