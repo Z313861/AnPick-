@@ -9,6 +9,8 @@ def show(conn):
     st.title("仪表盘")
     rows = query(conn, "SELECT * FROM orders ORDER BY id DESC", fetch=True)
     df = orders_df(rows)
+
+    df["risk"] = pd.to_numeric(df["risk"], errors='coerce')
     st.subheader("关键指标")
     st.metric("订单总数", len(df))
     st.metric("异常订单（risk>0.6）", len(df[df["risk"]>0.6]) if not df.empty else 0)
@@ -21,4 +23,5 @@ def show(conn):
     if fig2:
         st.plotly_chart(fig2, use_container_width=True)
 conn=sqlite3.connect("data.db")
+
 show(conn)
