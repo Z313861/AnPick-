@@ -54,8 +54,9 @@ def show(conn):
             conn.commit()
             st.success(f"风险评分更新为 {score:.2f}")
             st.rerun()
-conn = sqlite3.connect("data.db")
+
 show(conn)
+
 
 
 
