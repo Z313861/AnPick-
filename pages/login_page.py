@@ -19,6 +19,5 @@ def show(conn):
     if st.button("注册新账号",width='content'):
         st.session_state["page"] = "register"
         st.rerun()
-conn = sqlite3.connect("data.db")
-show(conn)
+
 
