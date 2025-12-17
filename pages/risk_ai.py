@@ -77,5 +77,5 @@ def show(conn):
         else:
             st.write("暂无记录")
 if __name__ == "__main__":
-    conn = sqlite3.connect("data.db")
-    show(conn)
+    
+
