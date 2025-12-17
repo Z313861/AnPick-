@@ -35,5 +35,4 @@ def show(conn):
         except Exception as e:
             st.error(f"生成周报失败:{str(e)}")
 if __name__ == "__main__":
-    conn = sqlite3.connect("data.db")
-    show(conn)
+ 
